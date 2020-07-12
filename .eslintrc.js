@@ -20,5 +20,15 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint'],
-  rules: {},
+  rules: {
+    'import/extensions': [
+      2,
+      'ignorePackages',
+      { ts: 'never', tsx: 'never', json: 'never', js: 'never' },
+    ],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'no-useless-constructor': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    'no-unused-expressions': [2, { allowShortCircuit: true, allowTernary: true }],
+  },
 }
